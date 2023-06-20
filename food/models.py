@@ -17,7 +17,7 @@ class Category(models.Model):
 
 class Menu(models.Model):
     title = models.CharField(max_length=100, verbose_name="Тame of the dish")
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, verbose_name="Category")
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, verbose_name="Category") #on_delete=models.SET_NULL
     image = models.ImageField(upload_to="food/", verbose_name="Image")
     price = models.PositiveIntegerField(verbose_name="Price")
     description = models.TextField(max_length=200, verbose_name="Description")
@@ -100,8 +100,8 @@ class Gallery(models.Model):
     
 
     class Meta:
-        Verbose_name = "Photo"
-        Verbose_name_plural = "Gallery"
+        verbose_name = "Photo"
+        verbose_name_plural = "Gallery"
 
 
 class Role(models.Model):
@@ -113,8 +113,8 @@ class Role(models.Model):
     
 
     class Meta:
-        Verbose_name = "Role"
-        Verbose_name_plural = "Roles"
+        verbose_name = "Role"
+        verbose_name_plural = "Roles"
 
 
 class Chefs(models.Model):
