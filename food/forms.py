@@ -66,7 +66,10 @@ class ReservationForm(ModelForm):
 
 class ContactForm(ModelForm):
     model = Contact
-    fields = []
+    fields = ['full_name','email','subject','message']
+    widgets = {
+        'full_name': 
+    }
 
 
 
